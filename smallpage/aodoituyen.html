@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop bán phụ kiện bóng đá THD</title>
+    <link rel="stylesheet" href="../doibuonjqk.css/style.css">
+    <style>
+        /* CSS bổ sung để đảm bảo ảnh hiện đẹp */
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* Giúp ảnh không bị méo */
+        }
+        
+        .price {
+            color: red;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Shop bán phụ kiện bóng đá Trương Hải Đăng 11A1 Toán</h1>
+        <nav>
+            <ul class="menu-chinh">
+                <!-- SỬA MENU: Dùng đường dẫn tương đối, bỏ C:\Users... -->
+                <li><a href="../index.html">Trang chủ</a></li>
+
+                <li class="menu-cha">
+                    <a href="ao_bong_da.html">Áo bóng đá</a>
+                    <ul class="menu-con">
+                        <li><a href="aoclb.html">Áo CLB</a></li>
+                        <li><a href="aodoituyen.html">Áo Đội Tuyển</a></li>
+                        <li><a href="quan.html">Quần</a></li>
+                    </ul>
+                </li>
+                <li><a href="giay_bong_da.html">Giày bóng đá</a></li>
+                <li><a href="bong.html">Bóng</a></li>
+                <li><a href="cac_phu_kien_khac.html">Các phụ kiện khác</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>ÁO ĐỘI TUYỂN QUỐC GIA</h2>
+
+
+        <div class="product-grid" id="productGrid"></div>
+
+        <!-- Load file JS gốc chứa hàm renderProducts -->
+        <script src="../Product.js"></script>
+
+        <script>
+            // --- SỬA QUAN TRỌNG TẠI ĐÂY ---
+            const danhSachMoii = [{
+                name: "Áo Tây Ban Nha",
+                price: "360.000đ",
+                img: "aotaynha.jpg"
+            }, {
+                name: "Áo Đức",
+                price: "425.000đ",
+                img: "aoduc.jpg"
+            }, {
+                name: "Áo Bồ Đào Nha",
+                price: "700.000đ",
+                img: "aobodaonha.jpg"
+            }, {
+                name: "Áo Agrentina",
+                price: "36.000đ",
+                img: "aoargentina.jpg"
+            }, {
+                name: "Áo Brazil",
+                price: "180.000đ",
+                img: "aobrazil.jpg"
+            }, ];
+            // 2. Gọi hàm renderProducts
+            if (typeof renderProducts === 'function') {
+                renderProducts(danhSachMoii);
+            } else {
+                console.error("Chưa tải được hàm renderProducts từ file Product.js");
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p> Email:haidangtruong1803@gmail.com
+            <br> Số điện thoại:0345678910jqk
+            <br> Thầy Đạt đẹp trai nhất KHTN chấm em 10 điểm
+        </p>
+    </footer>
+
+</body>
+
+</html>
